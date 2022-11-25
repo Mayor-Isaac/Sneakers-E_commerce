@@ -457,6 +457,7 @@ MEDIA
   .filled-cart .flex{
     justify-content: space-around;
   }
+  .attribution,
   .thank-you{
     font-size: 1.1rem;
   }
