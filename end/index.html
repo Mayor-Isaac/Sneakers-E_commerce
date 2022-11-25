@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Frontend Mentor | E-commerce product page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="relative">
+    <header class="relative">
+      <div class="container">
+        <div class="navbar flex">
+          <div class="menu d-none pointer">
+            <img src="./images/icon-menu.svg" alt="Menu icon" />
+          </div>
+          <div class="brand">
+            <img src="./images/logo.svg" alt="Brand Logo" />
+          </div>
+          <nav>
+            <ul class="flex">
+              <div class="menu-close d-none pointer">
+                <img src="./images/icon-close.svg" alt="Close menu icon">
+              </div>
+              <li><a href="#"> Collections</a></li>
+              <li><a href="#"> Men</a></li>
+              <li><a href="#"> Women</a></li>
+              <li><a href="#"> About</a></li>
+              <li><a href="#"> Contact</a></li>
+            </ul>
+          </nav>
+          <div class="cart relative pointer">
+            <img src="./images/icon-cart.svg" alt="Cart logo" />
+            <div class="item-bought absolute d-none bg-orange">
+              <p class="text-white">0</p>
+            </div>
+          </div>
+          <div class="profile pointer">
+            <img src="./images/image-avatar.png" alt="Profile picture" class="circle"/>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container flex">
+        <div class="product relative">
+          <img src="./images/image-product-1.jpg" alt="Shoe picture" class="pointer"/>
+          <button class="btn btn--prev absolute bg-white d-none circle">
+            <img src="./images/icon-previous.svg" alt="Previous icon" />
+          </button>
+          <button class="btn btn--next absolute bg-white d-none circle">
+            <img src="./images/icon-next.svg" alt="Next icon" />
+          </button>
+          <div class="pictures flex">
+            <div class="pointer active">&nbsp;</div>
+            <div class="pointer">&nbsp;</div>
+            <div class="pointer">&nbsp;</div>
+            <div class="pointer">&nbsp;</div>
+          </div>
+        </div>
+        <div class="info">
+          <h3 class="text-orange">Sneaker Company</h3>
+          <h1 class="text-dark">Fall Limited Edition Sneakers</h1>
+          <p class="advert">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+          <div class="price flex">
+            <div class="new-price flex">
+              <h2 class="text-dark">$125.00</h2>
+              <h3 class="text-orange">50%</h3>
+            </div>
+            <div class="old-price">
+              <p><strike> $250.00</strike></p>
+            </div>
+          </div>
+          <div class="cart flex">
+            <div class="number flex">
+              <button class="btn-minus">
+                <img src="./images/icon-minus.svg" alt="Minus icon" />
+              </button>
+              <h3 class="text-dark item-number">0</h3>
+              <button class="btn-plus">
+                <img src="./images/icon-plus.svg" alt="Plus icon" />
+              </button>
+            </div>
+            <button class="add-item flex text-white bg-orange">
+              <img src="./images/icon-cart.svg" alt="cart logo" />
+              <p>Add to cart</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- CART BOX -->
+    <div class="cart-box absolute bg-white b-rad-10 d-none">
+      <h3 class="text-dark">Cart <span class="pointer"><img src="./images/icon-close.svg" alt=""></span></h3>
+      <div class="empty-cart text-dark d-none">
+        <p>Your cart is empty</p>
+      </div>
+      <div class="filled-cart d-none">
+        <div class="flex">
+          <img
+            src="./images/image-product-1-thumbnail.jpg"
+            alt="Product 1 thumbnail"
+          />
+          <div>
+            <p>Fall Limited Edition Sneakers</p>
+            <h4>
+              $125.00 * <span class="digit text-orange">3</span> =
+              <span class="text-orange">$ <span class="total">375</span></span>
+            </h4>
+          </div>
+          <div class="delete pointer">
+            <img src="./images/icon-delete.svg" alt="Delete icon" />
+          </div>
+        </div>
+        <button class="text-white bg-orange checkout"> Checkout </button>
+      </div>
+      <div class="warning d-none">
+        <div class="text-dark">Are you sure that you want to <strong class="text-red">completely clear</strong> your cart ?</div>
+        <div class="flex">
+          <button class="yes text-white">Yes</button>
+          <button class="bg-orange no text-white">No</button>
+        </div>
+      </div>
+    </div>
+    <!-- LIGHTBOX -->
+        <section class="lightbox absolute d-none overlay">
+          <div class="close pointer"><img src="./images/icon-close.svg" alt="close icon"></div>
+          <div class="img-box relative">
+            <div class="img__container pointer flex">
+            <img src="./images/image-product-1.jpg" alt="Shoe picture"/>
+            <img src="./images/image-product-2.jpg" alt="Shoe picture"/>
+            <img src="./images/image-product-3.jpg" alt="Shoe picture"/>
+            <img src="./images/image-product-4.jpg" alt="Shoe picture"/></div>
+            <div>
+              <button class="btn bg-white absolute circle btn--prev">
+                <img src="./images/icon-previous.svg" alt="Previous icon" />
+              </button>
+              <button class="btn bg-white absolute circle btn--next">
+                <img src="./images/icon-next.svg" alt="Next icon" />
+              </button>
+            </div>
+          </div>
+          <div class="pictures flex">
+            <div class="pointer active">&nbsp;</div>
+            <div class="pointer">&nbsp;</div>
+            <div class="pointer">&nbsp;</div>
+            <div class="pointer">&nbsp;</div>
+          </div>
+        </section>
+        <!-- THANK YOU -->
+        <section class="thank-you absolute text-dark text-center overlay d-none">
+          <h1>Thanks for your patronage</h1>
+          <h2>Your total amount to pay is <span class="text-orange">$<span class="total__pay">235</span></span></h2>
+          <h3>Click the WhatsApp icon to chat with our customer care representative about your goods</h3>
+          <div class="pointer"><a href="https://wa.me/+2347067060287" target="_blank"><i class="fa-brands fa-3x fa-whatsapp text-orange"></i></a></div>
+          <button class="back bg-orange text-white">Back to Shopping</button>
+        </section>
+        <div class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+             class="text-orange">Frontend Mentor</a
+          >. Coded by <a href="https://www.frontendmentor.io/profile/Mayor-Isaac" class="text-orange">Mayor Idyllic</a>.
+        </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
